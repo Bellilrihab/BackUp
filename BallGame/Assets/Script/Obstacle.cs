@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public Mvt BallMvt;
+    private const bool V = false;
+   public Mvt BallMvt;
    
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +13,7 @@ public class Obstacle : MonoBehaviour
         {
             Debug.Log("GameOver");
 
-            BallMvt.enabled = false;
+            BallMvt.enabled = V;
             FindObjectOfType<GameManager>().EndGame();
         }
     }
